@@ -24,8 +24,8 @@ function from_base(string $number, int $from_base): int
     /** @psalm-suppress MissingThrowsDocblock */
     $limit  = div(INT64_MAX, $from_base);
     $result = 0;
-    foreach (Byte\chunk($number) as $digit) {
-        $oval = Byte\ord($digit);
+    for ($i = 0, $l = \strlen($number); $i < $l; $i++) {
+        $oval = Byte\ord($number[$i]);
         // Branches sorted by guesstimated frequency of use. */
         if (/* '0' - '9' */ $oval <= 57 && $oval >= 48) {
             $dval = $oval - 48;

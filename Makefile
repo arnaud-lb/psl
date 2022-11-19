@@ -1,4 +1,4 @@
-php-config           := opcache.enable_cli: true, opcache.jit_buffer_size: 256M, opcache.enable_cli: true, opcache.enable: true, opcache.jit: 1235
+php-config           := opcache.enable_cli: true, opcache.jit_buffer_size: 256M, opcache.enable_cli: true, opcache.enable: true
 php-extension-config := $(php-config), extension: extension/target/release/libpsl.so
 
 help:                                                                           ## shows this help
